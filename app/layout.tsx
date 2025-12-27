@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Manrope, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
+import { Header } from "@/components/navigation/header";
 // import { ThemeToggle } from "@/components/theme"; // move into Header ideally
 
 const fontBody = Inter({
@@ -33,6 +34,7 @@ export default function RootLayout({
         className={`${fontBody.variable} ${fontHeading.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider>
+          <Header />
           {children}
         </ThemeProvider>
       </body>
