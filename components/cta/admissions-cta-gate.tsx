@@ -4,14 +4,14 @@ import { usePathname } from "next/navigation";
 import AdmissionsCTA from "@/components/cta/admissions-cta";
 
 export default function AdmissionsCtaGate() {
-  const pathname = usePathname();
+    const pathname = usePathname();
 
-  // hide on contact routes
-  const hide =
-    pathname === "/contact" ||
-    pathname.startsWith("/contact/");
+    // hide on contact routes
+    const hide =
+        pathname === "/contact" ||
+        pathname.startsWith("/contact/");
 
-  if (hide) return null;
+    if (hide) return null;
 
-  return <AdmissionsCTA />;
+    return <AdmissionsCTA />;
 }
