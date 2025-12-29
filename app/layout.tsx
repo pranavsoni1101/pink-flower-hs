@@ -3,6 +3,8 @@ import { Inter, Manrope, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { Header } from "@/components/navigation/header";
+import AdmissionsCtaGate from "@/components/cta/admissions-cta-gate";
+import { Footer } from "@/components/navigation/footer";
 // import { ThemeToggle } from "@/components/theme"; // move into Header ideally
 
 const fontBody = Inter({
@@ -36,6 +38,8 @@ export default function RootLayout({
         <ThemeProvider>
           <Header />
           {children}
+          <AdmissionsCtaGate />
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
