@@ -102,7 +102,6 @@ const navItemHoverUnderline =
 const navItemActive =
     "text-foreground after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-full after:bg-primary after:!w-full";
 
-
 export function Navbar() {
     const pathname = usePathname();
     const [sheetOpen, setSheetOpen] = React.useState(false);
@@ -173,9 +172,7 @@ export function Navbar() {
                                     className={cn(
                                         navItemBase,
                                         navItemHoverUnderline,
-                                        // hard force: never look like a button
                                         "bg-transparent shadow-none border-0 hover:bg-transparent",
-                                        // open state underline (pink)
                                         "data-[state=open]:text-foreground data-[state=open]:after:w-full data-[state=open]:after:bg-primary"
                                     )}
                                 >
@@ -260,17 +257,12 @@ export function Navbar() {
                                     Contact
                                 </Link>
                             </NavigationMenuItem>
-
                         </NavigationMenuList>
                     </NavigationMenu>
 
                     <div className="flex items-center gap-2">
                         <ThemeToggle />
-                        {/* CTA: pink only */}
-                        <Button
-                            asChild
-                            className="bg-primary text-primary-foreground hover:bg-primary/90"
-                        >
+                        <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
                             <Link href="/contact">Admissions Enquiry</Link>
                         </Button>
                     </div>
@@ -286,43 +278,54 @@ export function Navbar() {
                             </Button>
                         </SheetTrigger>
 
-                        <SheetContent side="right" className="w-[360px] sm:w-[420px]">
-                            <SheetHeader>
-                                <SheetTitle className="text-left">Menu</SheetTitle>
+                        {/* FULL HEIGHT SHEET */}
+                        <SheetContent
+                            side="right"
+                            className="w-full sm:w-[420px] h-screen p-0 flex flex-col"
+                        >
+                            {/* Header */}
+                            <SheetHeader className="px-5 py-4 border-b border-border/60">
+                                <SheetTitle className="text-left text-lg font-semibold">
+                                    Menu
+                                </SheetTitle>
                             </SheetHeader>
 
-                            <div className="mt-4 space-y-6">
-                                <div className="space-y-2">
-                                    <MobileLink href="/" onNavigate={() => setSheetOpen(false)}>
-                                        Home
-                                    </MobileLink>
-                                    <MobileLink
-                                        href="/contact"
+                            {/* SCROLLABLE CONTENT */}
+                            <div className="flex-1 overflow-y-auto px-5 py-5">
+                                <div className="flex flex-col gap-6">
+                                    {/* quick links */}
+                                    <div className="space-y-2">
+                                        <MobileLink href="/" onNavigate={() => setSheetOpen(false)}>
+                                            Home
+                                        </MobileLink>
+                                        <MobileLink href="/contact" onNavigate={() => setSheetOpen(false)}>
+                                            Contact
+                                        </MobileLink>
+                                    </div>
+
+                                    <Section
+                                        title="About"
+                                        items={NAV.about}
                                         onNavigate={() => setSheetOpen(false)}
-                                    >
-                                        Contact
-                                    </MobileLink>
+                                    />
+                                    <Section
+                                        title="Academics"
+                                        items={NAV.academics}
+                                        onNavigate={() => setSheetOpen(false)}
+                                    />
+                                    <Section
+                                        title="Admissions"
+                                        items={NAV.admissions}
+                                        onNavigate={() => setSheetOpen(false)}
+                                    />
                                 </div>
+                            </div>
 
-                                <Section
-                                    title="About"
-                                    items={NAV.about}
-                                    onNavigate={() => setSheetOpen(false)}
-                                />
-                                <Section
-                                    title="Academics"
-                                    items={NAV.academics}
-                                    onNavigate={() => setSheetOpen(false)}
-                                />
-                                <Section
-                                    title="Admissions"
-                                    items={NAV.admissions}
-                                    onNavigate={() => setSheetOpen(false)}
-                                />
-
+                            {/* FIXED CTA FOOTER (NO OVERFLOW) */}
+                            <div className="px-5 py-4 border-t border-border/60 bg-background">
                                 <Button
                                     asChild
-                                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                                    className="w-full h-11 bg-primary text-primary-foreground hover:bg-primary/90"
                                     onClick={() => setSheetOpen(false)}
                                 >
                                     <Link href="/contact">Admissions Enquiry</Link>
@@ -331,6 +334,7 @@ export function Navbar() {
                         </SheetContent>
                     </Sheet>
                 </div>
+
             </div>
         </header>
     );
@@ -352,12 +356,10 @@ function DropItem({
                     href={href}
                     className={cn(
                         "group relative block rounded-xl p-3",
-                        // key: no fill, no green, no button feel
                         "transition-colors hover:text-foreground",
                         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                     )}
                 >
-                    {/* subtle pink indicator only */}
                     <span className="absolute left-0 top-3 hidden h-4 w-[2px] bg-primary group-hover:block" />
                     <div className="text-sm font-semibold leading-none text-foreground">
                         {title}
@@ -385,9 +387,10 @@ function MobileLink({
             href={href}
             onClick={onNavigate}
             className={cn(
-                "block rounded-xl px-3 py-2 text-sm font-semibold",
+                "block rounded-xl px-4 py-3 text-sm font-semibold",
                 "text-foreground/90 hover:text-foreground",
-                "border border-transparent hover:border-border"
+                "border border-border/60 bg-card/40 hover:bg-card",
+                "transition-colors"
             )}
         >
             {children}
@@ -405,11 +408,11 @@ function Section({
     onNavigate: () => void;
 }) {
     return (
-        <div>
-            <div className="mb-2 text-xs font-semibold tracking-wide text-muted-foreground">
+        <div className="rounded-xl bg-card/40 p-3 ring-1 ring-border/60">
+            <div className="mb-3 text-xs font-semibold tracking-wide text-muted-foreground">
                 {title.toUpperCase()}
             </div>
-            <div className="space-y-1">
+            <div className="space-y-0.5">
                 {items.map((i) => (
                     <Link
                         key={i.title}
@@ -418,7 +421,8 @@ function Section({
                         className={cn(
                             "block rounded-lg px-3 py-2 text-sm",
                             "text-muted-foreground hover:text-foreground",
-                            "border border-transparent hover:border-border"
+                            "border border-transparent hover:border-border",
+                            "transition-colors"
                         )}
                     >
                         {i.title}
