@@ -46,7 +46,7 @@ export default function StudentLife({ className }: StudentLifeProps) {
                     {/* Right: Content */}
                     <div className="lg:col-span-5">
                         <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-                            Student Life at Pink Flower Valley School
+                            Student Life at Pink Flower School
                         </h2>
 
                         <p className="mt-4 text-muted-foreground leading-relaxed">

@@ -27,7 +27,7 @@ export default function ContactPage() {
                         <div className="relative h-[320px] overflow-hidden rounded-3xl bg-muted/40">
                             <Image
                                 src="/campus.webp"
-                                alt="Pink Flower Valley School campus"
+                                alt="Pink Flower School campus"
                                 fill
                                 className="object-cover"
                                 priority
@@ -66,10 +66,10 @@ export default function ContactPage() {
                                     <p>
                                         Email:{" "}
                                         <a
-                                            href="mailto:info@pinkflowervalley.edu"
+                                            href="mailto:info@pinkflower.edu"
                                             className="hover:text-foreground transition-colors"
                                         >
-                                            info@pinkflowervalley.edu
+                                            info@pinkflower.edu
                                         </a>
                                     </p>
                                     <p>Phone: +91 00000 00000</p>

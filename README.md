@@ -1,6 +1,6 @@
-# Pink Flower Valley School – Demo Website
+# Pink Flower School – Demo Website
 
-A modern, minimal demo website for **Pink Flower Valley School**, built to showcase a clean institutional design, accessibility-first UI, and a scalable component architecture using modern web technologies.
+A modern, minimal demo website for **Pink Flower School**, built to showcase a clean institutional design, accessibility-first UI, and a scalable component architecture using modern web technologies.
 
 This repository represents a **demonstration build**, focusing on structure, design system, and UX rather than full backend integration.
 

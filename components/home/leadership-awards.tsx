@@ -19,7 +19,7 @@ export default function LeadershipAwards({ className }: LeadershipAwardsProps) {
                         </h2>
 
                         <p className="mt-4 max-w-xl text-muted-foreground leading-relaxed">
-                            Pink Flower Valley School is guided by experienced leadership with a strong
+                            Pink Flower School is guided by experienced leadership with a strong
                             academic vision and decades of commitment to quality education.
                         </p>
 
@@ -72,7 +72,7 @@ export default function LeadershipAwards({ className }: LeadershipAwardsProps) {
                                 <div className="relative h-full min-h-[320px] overflow-hidden">
                                     <Image
                                         src="/principal.jpg" // or award.jpg
-                                        alt="Principal of Pink Flower Valley School"
+                                        alt="Principal of Pink Flower School"
                                         fill
                                         className="object-cover"
                                         priority={false}
