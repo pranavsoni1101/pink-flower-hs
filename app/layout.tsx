@@ -23,8 +23,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pink Flower Valley School",
-  description: "Demo site for Pink Flower Valley School",
+  title: "Pink Flower School",
+  description: "Demo site for Pink Flower School",
 };
 
 export default function RootLayout({

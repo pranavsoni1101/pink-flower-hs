@@ -42,7 +42,7 @@ export default function AcademicsOverview({ className }: AcademicsOverviewProps)
         {/* Header */}
         <div className="max-w-2xl">
           <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-            Academics at Pink Flower Valley School
+            Academics at Pink Flower School
           </h2>
           <p className="mt-3 text-muted-foreground">
             A structured MP Board curriculum focused on strong fundamentals and steady academic growth.

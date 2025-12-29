@@ -117,9 +117,9 @@ export function Navbar() {
                     <div className="flex items-center gap-3">
                         <Link
                             className="hover:text-foreground transition-colors"
-                            href="mailto:info@pinkflowervalley.edu"
+                            href="mailto:info@pinkflower.edu"
                         >
-                            info@pinkflowervalley.edu
+                            info@pinkflower.edu
                         </Link>
                         <span className="h-1 w-1 rounded-full bg-border" />
                         <Link
@@ -138,10 +138,10 @@ export function Navbar() {
                 {/* Brand */}
                 <Link href="/" className="flex items-center gap-3">
                     <div className="grid h-10 w-10 place-items-center rounded-xl bg-card ring-1 ring-border/70">
-                        <span className="text-sm font-semibold text-foreground">PFV</span>
+                        <span className="text-sm font-semibold text-foreground">PFHS</span>
                     </div>
                     <div className="leading-tight">
-                        <div className="font-semibold tracking-tight">Pink Flower Valley</div>
+                        <div className="font-semibold tracking-tight">Pink Flower HS</div>
                         <div className="text-xs text-muted-foreground">School</div>
                     </div>
                 </Link>

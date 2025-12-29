@@ -17,7 +17,7 @@ export default function Footer({ className }: { className?: string }) {
                     {/* School info */}
                     <div>
                         <div className="text-lg font-semibold">
-                            Pink Flower Valley School
+                            Pink Flower School
                         </div>
                         <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                             A trusted MP Board school focused on strong academics,
@@ -31,10 +31,10 @@ export default function Footer({ className }: { className?: string }) {
                         <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                             <li>
                                 <a
-                                    href="mailto:info@pinkflowervalley.edu"
+                                    href="mailto:info@pinkflower.edu"
                                     className="hover:text-foreground transition-colors"
                                 >
-                                    info@pinkflowervalley.edu
+                                    info@pinkflower.edu
                                 </a>
                             </li>
                             <li>+91 00000 00000</li>
@@ -81,7 +81,7 @@ export default function Footer({ className }: { className?: string }) {
                 {/* Bottom */}
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                     <p className="text-xs text-muted-foreground">
-                        © {new Date().getFullYear()} Pink Flower Valley School. All rights reserved.
+                        © {new Date().getFullYear()} Pink Flower School. All rights reserved.
                     </p>
 
                     <p className="text-xs text-muted-foreground">

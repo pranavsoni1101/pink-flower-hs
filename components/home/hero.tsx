@@ -14,7 +14,7 @@ type HeroProps = {
 
 export default function Hero({
     className,
-    schoolName = "Pink Flower Valley School",
+    schoolName = "Pink Flower School",
 }: HeroProps) {
     return (
         <section
@@ -77,9 +77,9 @@ export default function Hero({
                             <span className="mx-2 text-border">|</span>
                             <a
                                 className="hover:text-foreground transition-colors"
-                                href="mailto:info@pinkflowervalley.edu"
+                                href="mailto:info@pinkflower.edu"
                             >
-                                info@pinkflowervalley.edu
+                                info@pinkflower.edu
                             </a>
                         </div>
                     </div>

@@ -59,10 +59,10 @@ export default function AdmissionsCTA({ className }: AdmissionsCTAProps) {
                         School Hours: Mon–Sat, 8:00 AM – 2:00 PM
                         <span className="mx-2 text-border">|</span>
                         <a
-                            href="mailto:info@pinkflowervalley.edu"
+                            href="mailto:info@pinkflower.edu"
                             className="hover:text-foreground transition-colors"
                         >
-                            info@pinkflowervalley.edu
+                            info@pinkflower.edu
                         </a>
                     </div>
                 </div>

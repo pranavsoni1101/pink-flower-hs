@@ -29,7 +29,7 @@ const ITEMS = [
 
 export default function WhyChooseUs({
   className,
-  title = "Why Parents Choose Pink Flower Valley School",
+  title = "Why Parents Choose Pink Flower School",
   subtitle = "Proven academics, experienced leadership, and a learning environment parents trust.",
 }: WhyChooseUsProps) {
   return (
